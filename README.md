@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Augmenting the build-in PHP date functionality.
+Augmenting the built-in PHP date functionality.
 
 ## Install
 

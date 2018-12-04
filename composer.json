@@ -1,7 +1,7 @@
 {
     "name": "stadly/php-date",
     "type": "library",
-    "description": "Augmenting the build-in PHP date functionality.",
+    "description": "Augmenting the built-in PHP date functionality.",
     "keywords": [
         "date",
         "date interval",
