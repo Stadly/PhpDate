@@ -22,7 +22,9 @@ $ composer require stadly/php-date
 ``` php
 use Stadly\Date\Interval;
 
-Interval::compare(new \DateInterval('P1M'), new \DateInterval('P32D'));
+Interval::compare(new \DateInterval('P1M'), new \DateInterval('P27D')); // 1
+Interval::compare(new \DateInterval('P1M'), new \DateInterval('P30D')); // null
+Interval::compare(new \DateInterval('P1M'), new \DateInterval('P32D')); // -1
 ```
 
 ## Change log
