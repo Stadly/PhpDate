@@ -7,7 +7,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## Unreleased
 
 ### Added
-- Nothing
+- Possible to compare date intervals.
 
 ### Changed
 - Nothing

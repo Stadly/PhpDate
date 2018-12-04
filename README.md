@@ -17,6 +17,14 @@ Via Composer
 $ composer require stadly/php-date
 ```
 
+## Usage
+
+``` php
+use Stadly\Date\Interval;
+
+Interval::compare(new \DateInterval('P1M'), new \DateInterval('P32D'));
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
