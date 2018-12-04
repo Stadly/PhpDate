@@ -364,7 +364,7 @@ final class IntervalTest extends TestCase
     /**
      * @covers ::compare
      */
-    public function test28DaysIsNotComparableWithMonth(): void
+    public function test28DaysIsNotComparableWith1Month(): void
     {
         $a = new DateInterval('P28D');
         $b = new DateInterval('P1M');
@@ -375,7 +375,7 @@ final class IntervalTest extends TestCase
     /**
      * @covers ::compare
      */
-    public function test29DaysIsNotComparableWithMonth(): void
+    public function test29DaysIsNotComparableWith1Month(): void
     {
         $a = new DateInterval('P29D');
         $b = new DateInterval('P1M');
@@ -386,7 +386,7 @@ final class IntervalTest extends TestCase
     /**
      * @covers ::compare
      */
-    public function test30DaysIsNotComparableWithMonth(): void
+    public function test30DaysIsNotComparableWith1Month(): void
     {
         $a = new DateInterval('P30D');
         $b = new DateInterval('P1M');
@@ -397,7 +397,7 @@ final class IntervalTest extends TestCase
     /**
      * @covers ::compare
      */
-    public function test31DaysIsNotComparableWithMonth(): void
+    public function test31DaysIsNotComparableWith1Month(): void
     {
         $a = new DateInterval('P31D');
         $b = new DateInterval('P1M');
@@ -434,6 +434,94 @@ final class IntervalTest extends TestCase
     {
         $a = new DateInterval('P31DT1S');
         $b = new DateInterval('P1M');
+
+        self::assertGreaterThanOrEqual(1, Interval::compare($a, $b));
+    }
+
+    /**
+     * @covers ::compare
+     */
+    public function test335DaysIsShorterThan1Year(): void
+    {
+        $a = new DateInterval('P335D');
+        $b = new DateInterval('P1Y');
+
+        self::assertLessThanOrEqual(-1, Interval::compare($a, $b));
+    }
+
+    /**
+     * @covers ::compare
+     */
+    public function test336DaysIsNotComparableWith1Year(): void
+    {
+        $a = new DateInterval('P336D');
+        $b = new DateInterval('P1Y');
+
+        self::assertNull(Interval::compare($a, $b));
+    }
+
+    /**
+     * @covers ::compare
+     */
+    public function test337DaysIsNotComparableWith1Year(): void
+    {
+        $a = new DateInterval('P337D');
+        $b = new DateInterval('P1Y');
+
+        self::assertNull(Interval::compare($a, $b));
+    }
+
+    /**
+     * @covers ::compare
+     */
+    public function test371DaysIsNotComparableWith1Year(): void
+    {
+        $a = new DateInterval('P371D');
+        $b = new DateInterval('P1Y');
+
+        self::assertNull(Interval::compare($a, $b));
+    }
+
+    /**
+     * @covers ::compare
+     */
+    public function test372DaysIsNotComparableWith1Year(): void
+    {
+        $a = new DateInterval('P372D');
+        $b = new DateInterval('P1Y');
+
+        self::assertNull(Interval::compare($a, $b));
+    }
+
+    /**
+     * @covers ::compare
+     */
+    public function test373DaysIsLongerThan1Year(): void
+    {
+        $a = new DateInterval('P373D');
+        $b = new DateInterval('P1Y');
+
+        self::assertGreaterThanOrEqual(1, Interval::compare($a, $b));
+    }
+
+    /**
+     * @covers ::compare
+     */
+    public function testLessThan336DaysIsShorterThan1Year(): void
+    {
+        $a = new DateInterval('P335DT59M59S');
+        $b = new DateInterval('P1Y');
+
+        self::assertLessThanOrEqual(-1, Interval::compare($a, $b));
+    }
+
+    /**
+     * @covers ::compare
+     */
+    public function testMoreThan372DaysIsLongerThan1Year(): void
+    {
+        $a = new DateInterval('P372DT1S');
+        $b = new DateInterval('P1Y');
 
         self::assertGreaterThanOrEqual(1, Interval::compare($a, $b));
     }

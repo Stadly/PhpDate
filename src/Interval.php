@@ -44,7 +44,7 @@ final class Interval
      */
     private static function getMonthsInInterval(DateInterval $interval): int
     {
-        $years = $interval->y * 12;
+        $years = $interval->y;
         $months = $years * 12 + $interval->m;
 
         if ($interval->invert === 1) {
